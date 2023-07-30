@@ -18,24 +18,11 @@ spec:
     image:
       repository: "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/higress"
       tag: "1.1.0"
-      imagePullPolicy: "IfNotPresent"
     gatewayName: "higress-gateway"
     ingressClass: "higress"
-    sdsTokenAud: "istio-ca"
   pilot:
     name: "pilot"
     image:
       repository: "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/pilot"
       tag: "1.1.0"
-      imagePullPolicy: "IfNotPresent"
-    env:
-      PILOT_SCOPE_GATEWAY_TO_NAMESPACE: "false"
-      PILOT_ENABLE_METADATA_EXCHANGE: "false"
-      PILOT_ENABLE_CROSS_CLUSTER_WORKLOAD_ENTRY: "false"
-      VALIDATION_ENABLED: "false"
-    traceSampling: "1.0"
-    keepaliveMaxServerConnectionAge: 30m
     clusterDomain: "cluster.local"
-    oneNamespace: false
-    enableProtocolSniffingForOutbound: true
-    enableProtocolSniffingForInbound: true
